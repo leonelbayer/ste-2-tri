@@ -1,19 +1,19 @@
-/* --- Paleta de Cores & Váriaveis Minimalistas --- */
+/* --- Cores & Variáveis Minimalistas --- */
 :root {
-    --bg-main: #F2F5F3;          /* Verde acizentado bem claro */
-    --bg-card: #FFFFFF;          /* Cartões brancos limpos */
-    --bg-accent: #E2EBE5;        /* Verde suave para destaque */
+    --bg-main: #F2F5F3;          /* Verde acinzentado suave */
+    --bg-card: #FFFFFF;          /* Fundo dos cards */
+    --bg-accent: #E2EBE5;        /* Verde claro institucional */
     --primary: #223D30;         /* Verde floresta profundo */
-    --primary-light: #3D6451;   /* Verde médio agradável */
-    --text-dark: #1F2D26;       /* Texto principal (quase preto) */
+    --primary-light: #3D6451;   /* Verde intermediário */
+    --text-dark: #1F2D26;       /* Texto escuro */
     --text-muted: #52665B;      /* Texto secundário */
-    --border-color: #DDE5E0;     /* Linhas sutis de divisão */
+    --border-color: #DDE5E0;     /* Linhas de divisão */
     --radius-sm: 8px;
     --radius-lg: 16px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- Reset & Tipografia --- */
+/* --- Reset --- */
 * {
     margin: 0;
     padding: 0;
@@ -164,7 +164,7 @@ body {
     box-shadow: 0 12px 30px rgba(34, 61, 48, 0.08);
 }
 
-/* --- Cabeçalhos Globais de Seção --- */
+/* --- Títulos Gerais --- */
 .section-header {
     text-align: center;
     max-width: 650px;
@@ -183,237 +183,44 @@ body {
     font-size: 1rem;
 }
 
-/* --- Seção Pilares (Blocos de Texto) --- */
-.pilares {
+/* --- Notícias & Dados --- */
+.noticias {
     padding: 70px 0;
     border-top: 1px solid var(--border-color);
 }
 
-.text-grid-3 {
+.noticias-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 24px;
 }
 
-.text-block {
+.noticia-card {
     background: var(--bg-card);
-    padding: 36px 30px;
+    padding: 32px 28px;
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
-.text-block:hover {
+.noticia-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
 }
 
-.block-number {
-    font-size: 0.9rem;
+.noticia-tag {
+    display: inline-block;
+    font-size: 0.75rem;
     font-weight: 700;
-    color: var(--primary-light);
-    margin-bottom: 12px;
-}
-
-.text-block h3 {
+    text-transform: uppercase;
     color: var(--primary);
-    font-size: 1.25rem;
+    background-color: var(--bg-accent);
+    padding: 4px 12px;
+    border-radius: 12px;
     margin-bottom: 14px;
 }
 
-.text-block p {
-    color: var(--text-muted);
-    font-size: 0.96rem;
-}
-
-/* --- Seção Artigos --- */
-.artigos {
-    padding: 70px 0;
-}
-
-.artigos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    gap: 30px;
-}
-
-.artigo-card {
-    background: var(--bg-card);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-}
-
-.artigo-image img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-}
-
-.artigo-content {
-    padding: 28px;
-    flex-grow: 1;
-}
-
-.tag {
-    font-size: 0.78rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--primary-light);
-    letter-spacing: 0.5px;
-    margin-bottom: 10px;
-    display: block;
-}
-
-.artigo-content h3 {
+.noticia-card h3 {
     color: var(--primary);
-    font-size: 1.15rem;
-    line-height: 1.4;
-    margin-bottom: 12px;
-}
-
-.artigo-content p {
-    color: var(--text-muted);
-    font-size: 0.93rem;
-}
-
-/* --- Citação Destaque --- */
-.quote-section {
-    padding: 40px 0 70px 0;
-}
-
-.quote-box {
-    background-color: var(--primary);
-    color: white;
-    padding: 50px 40px;
-    border-radius: var(--radius-lg);
-    text-align: center;
-}
-
-.quote-box p {
-    font-size: 1.35rem;
-    font-weight: 300;
-    font-style: italic;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* --- Interatividade --- */
-.interactive-section {
-    padding: 20px 0 80px 0;
-}
-
-.card-interactive {
-    background-color: var(--bg-accent);
-    padding: 50px 30px;
-    border-radius: var(--radius-lg);
-    text-align: center;
-}
-
-.card-interactive h2 {
-    color: var(--primary);
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.card-interactive p {
-    color: var(--text-muted);
-    margin-bottom: 28px;
-}
-
-.mood-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.mood-btn {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    padding: 12px 22px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-family: inherit;
-    font-weight: 500;
-    color: var(--text-dark);
-    transition: var(--transition);
-}
-
-.mood-btn:hover {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
-}
-
-.mood-response {
-    margin-top: 30px;
-    padding: 24px 30px;
-    background: white;
-    border-radius: var(--radius-sm);
-    display: inline-block;
-    max-width: 680px;
-    text-align: left;
-    border-left: 4px solid var(--primary);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-}
-
-.mood-response h4 {
-    color: var(--primary);
-    margin-bottom: 8px;
-    font-size: 1.1rem;
-}
-
-.mood-response p {
-    color: var(--text-muted);
-    margin-bottom: 0;
-    font-size: 0.96rem;
-}
-
-.hidden {
-    display: none;
-}
-
-/* --- Rodapé --- */
-.footer {
-    border-top: 1px solid var(--border-color);
-    padding: 40px 0;
-    background-color: var(--bg-card);
-}
-
-.footer-content {
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.88rem;
-}
-
-.disclaimer {
-    margin-top: 8px;
-    font-size: 0.8rem;
-    opacity: 0.7;
-}
-
-/* --- Responsividade --- */
-@media (max-width: 850px) {
-    .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .hero-actions {
-        justify-content: center;
-    }
-
-    .hero-image img {
-        height: 280px;
-    }
-
-    .quote-box p {
-        font-size: 1.15rem;
-    }
-}
+    font-size: 1.2rem;
+    line-height:
