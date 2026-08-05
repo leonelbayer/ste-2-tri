@@ -1,6 +1,6 @@
 /* --- PALETA DE CORES EDITORIAL MINIMALISTA --- */
 :root {
-    --font-scale: 1; /* Fator de escala dinâmico para acessibilidade */
+    --font-scale: 1; /* Escala dinâmica para acessibilidade */
     --bg-main: #F4F7F4;          
     --bg-surface: #FFFFFF;       
     --bg-accent: #E4ECE6;        
@@ -13,7 +13,7 @@
     --font-serif: 'Newsreader', Georgia, serif;
     --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
     --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    --focus-ring: #005Fcc;       /* Cor destacada para indicador de foco */
+    --focus-ring: #005FCC;
 }
 
 /* --- MODO ALTO CONTRASTE (WCAG AAA) --- */
@@ -21,8 +21,8 @@ body.high-contrast {
     --bg-main: #000000;
     --bg-surface: #121212;
     --bg-accent: #262626;
-    --primary-dark: #FFFF00;    /* Amarelo vibrante para alto contraste */
-    --primary-medium: #66FFFF;  /* Ciano vibrante */
+    --primary-dark: #FFFF00;
+    --primary-medium: #66FFFF;
     --accent-sage: #FFFF00;
     --text-body: #FFFFFF;
     --text-muted: #E0E0E0;
@@ -30,7 +30,7 @@ body.high-contrast {
     --focus-ring: #FFFF00;
 }
 
-/* --- RESET & ESCALA TIPOGRÁFICA --- */
+/* --- RESET & BASES --- */
 * {
     margin: 0;
     padding: 0;
@@ -39,7 +39,7 @@ body.high-contrast {
 
 html {
     scroll-behavior: smooth;
-    font-size: calc(16px * var(--font-scale)); /* Escala dinâmica */
+    font-size: calc(16px * var(--font-scale));
 }
 
 body {
@@ -56,7 +56,7 @@ body {
     outline-offset: 3px !important;
 }
 
-/* --- SKIP LINK (ATALHO DE TECLADO) --- */
+/* --- SKIP LINK --- */
 .skip-link {
     position: absolute;
     top: -100px;
@@ -256,7 +256,7 @@ body {
     font-style: italic;
 }
 
-/* --- SEÇÕES EDITORIAIS ALTERNADAS --- */
+/* --- SEÇÕES EDITORIAIS --- */
 .editorial-section {
     padding: 50px 0;
 }
@@ -344,6 +344,70 @@ body {
     position: absolute;
     left: 4px;
     top: -4px;
+}
+
+/* --- COMPLEMENTO: SINAIS SOMÁTICOS DE ANSIEDADE --- */
+.anxiety-complement {
+    margin-top: 60px;
+    background-color: var(--bg-surface);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+}
+
+.anxiety-header {
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
+.anxiety-header h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.anxiety-header p {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+}
+
+.anxiety-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.anxiety-card {
+    background-color: var(--bg-main);
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    transition: var(--transition);
+}
+
+.anxiety-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.anxiety-icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.anxiety-card h4 {
+    font-size: 1.05rem;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.anxiety-card p {
+    font-size: 0.9rem;
+    color: var(--text-body);
+    line-height: 1.6;
 }
 
 /* --- BANNER PANORÂMICO --- */
@@ -612,6 +676,10 @@ body {
     .article-layout {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .anxiety-cards-grid {
+        grid-template-columns: 1fr;
     }
 
     .hero-content h1 {

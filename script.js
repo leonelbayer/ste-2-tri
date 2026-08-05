@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. LÓGICA DE ACESSIBILIDADE --- //
+    // --- 1. FERRAMENTAS DE ACESSIBILIDADE --- //
 
     let fontScale = parseFloat(localStorage.getItem('userFontScale')) || 1.0;
     let isHighContrast = localStorage.getItem('userContrast') === 'true';
 
-    // Aplica estados salvos
+    // Restaura configurações salvas
     applyFontScale(fontScale);
     if (isHighContrast) applyContrast(true);
 
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnFontDecrease = document.getElementById('btn-font-decrease');
     const btnFontReset = document.getElementById('btn-font-reset');
 
-    // Alternar Alto Contraste
+    // Alternador de Alto Contraste
     btnContrast.addEventListener('click', () => {
         isHighContrast = !isHighContrast;
         applyContrast(isHighContrast);
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Controle de Tamanho de Fonte (Limites entre 0.85 e 1.4)
+    // Controle de Tamanho da Fonte (Ajuste entre 0.85x e 1.4x)
     btnFontIncrease.addEventListener('click', () => {
         if (fontScale < 1.4) {
             fontScale += 0.1;
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.setProperty('--font-scale', scale);
     }
 
-    // --- 2. NAVEGAÇÃO FLUIDA & ANIMAÇÕES --- //
+    // --- 2. NAVEGAÇÃO SUAVE --- //
 
     const navLinks = document.querySelectorAll('.nav a, .footer-links a');
 
@@ -82,8 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Observer para Animação de Entrada
-    const observerOptions = { threshold: 0.15 };
+    // --- 3. OBSERVER DE ANIMAÇÃO DE ENTRADA --- //
+
+    const observerOptions = { threshold: 0.12 };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -94,11 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const sections = document.querySelectorAll('.editorial-section, .panoramic-banner, .data-row, .deep-read');
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(20px)';
-        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(section);
+    const animatedElements = document.querySelectorAll('.editorial-section, .anxiety-complement, .panoramic-banner, .data-row, .deep-read');
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
     });
 });
