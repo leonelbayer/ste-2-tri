@@ -1,20 +1,36 @@
 /* --- PALETA DE CORES EDITORIAL MINIMALISTA --- */
 :root {
-    --bg-main: #F4F7F4;          /* Fundo sálvia ultra suave */
-    --bg-surface: #FFFFFF;       /* Fundo branco puro para superfícies */
-    --bg-accent: #E4ECE6;        /* Verde claro desaturado para destaques */
-    --primary-dark: #1A3026;     /* Verde floresta profundo para títulos */
-    --primary-medium: #2C4C3E;   /* Verde editorial elegante */
-    --accent-sage: #486E5A;      /* Verde sálvia intermediário */
-    --text-body: #2B3A33;        /* Texto principal com alto contraste legível */
-    --text-muted: #576B60;       /* Texto secundário editorial */
-    --border-subtle: #D8E2DC;    /* Linhas e bordas discretas */
+    --font-scale: 1; /* Fator de escala dinâmico para acessibilidade */
+    --bg-main: #F4F7F4;          
+    --bg-surface: #FFFFFF;       
+    --bg-accent: #E4ECE6;        
+    --primary-dark: #1A3026;     
+    --primary-medium: #2C4C3E;   
+    --accent-sage: #486E5A;      
+    --text-body: #2B3A33;        
+    --text-muted: #576B60;       
+    --border-subtle: #D8E2DC;    
     --font-serif: 'Newsreader', Georgia, serif;
     --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
     --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    --focus-ring: #005Fcc;       /* Cor destacada para indicador de foco */
 }
 
-/* --- RESET & BASES --- */
+/* --- MODO ALTO CONTRASTE (WCAG AAA) --- */
+body.high-contrast {
+    --bg-main: #000000;
+    --bg-surface: #121212;
+    --bg-accent: #262626;
+    --primary-dark: #FFFF00;    /* Amarelo vibrante para alto contraste */
+    --primary-medium: #66FFFF;  /* Ciano vibrante */
+    --accent-sage: #FFFF00;
+    --text-body: #FFFFFF;
+    --text-muted: #E0E0E0;
+    --border-subtle: #FFFFFF;
+    --focus-ring: #FFFF00;
+}
+
+/* --- RESET & ESCALA TIPOGRÁFICA --- */
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +39,7 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: calc(16px * var(--font-scale)); /* Escala dinâmica */
 }
 
 body {
@@ -30,8 +47,80 @@ body {
     background-color: var(--bg-main);
     color: var(--text-body);
     line-height: 1.75;
-    font-size: 16px;
     -webkit-font-smoothing: antialiased;
+}
+
+/* INDICADOR DE FOCO ACESSÍVEL */
+:focus-visible {
+    outline: 3px solid var(--focus-ring) !important;
+    outline-offset: 3px !important;
+}
+
+/* --- SKIP LINK (ATALHO DE TECLADO) --- */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    background: var(--primary-dark);
+    color: var(--bg-surface);
+    padding: 12px 20px;
+    z-index: 9999;
+    font-weight: 700;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 15px;
+}
+
+/* --- BARRA DE ACESSIBILIDADE --- */
+.accessibility-bar {
+    background-color: var(--primary-dark);
+    color: #FFFFFF;
+    padding: 8px 0;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.acc-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+.acc-label {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.acc-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.acc-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #FFFFFF;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.acc-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #FFFFFF;
+}
+
+.high-contrast .acc-btn {
+    color: #FFFF00;
+    border-color: #FFFF00;
 }
 
 .container {
@@ -40,7 +129,6 @@ body {
     margin: 0 auto;
 }
 
-/* --- DIVISÓRIA ELEGANTE --- */
 .divider {
     border: none;
     height: 1px;
@@ -50,7 +138,7 @@ body {
 
 /* --- CABEÇALHO --- */
 .header {
-    background-color: rgba(244, 247, 244, 0.94);
+    background-color: var(--bg-main);
     backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
@@ -89,7 +177,7 @@ body {
     text-decoration: none;
     color: var(--text-muted);
     font-size: 0.92rem;
-    font-weight: 500;
+    font-weight: 600;
     transition: var(--transition);
 }
 
@@ -168,7 +256,7 @@ body {
     font-style: italic;
 }
 
-/* --- SEÇÕES EDITORIAIS ALTERNADAS (SPLIT LAYOUT) --- */
+/* --- SEÇÕES EDITORIAIS ALTERNADAS --- */
 .editorial-section {
     padding: 50px 0;
 }
@@ -224,7 +312,7 @@ body {
     border-left: 3px solid var(--primary-medium);
     padding: 16px 20px;
     margin-top: 24px;
-    background-color: rgba(228, 236, 230, 0.4);
+    background-color: var(--bg-accent);
     border-radius: 0 6px 6px 0;
 }
 
@@ -282,7 +370,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(26, 48, 38, 0.65) 0%, rgba(26, 48, 38, 0.85) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.88) 100%);
     display: flex;
     align-items: center;
 }
@@ -308,7 +396,7 @@ body {
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 /* --- DADOS INTEGRADOS --- */
@@ -355,7 +443,7 @@ body {
     margin-bottom: 12px;
 }
 
-.data-item h4 {
+.data-item h3 {
     font-size: 1.05rem;
     color: var(--primary-dark);
     margin-bottom: 8px;
@@ -368,7 +456,7 @@ body {
     line-height: 1.6;
 }
 
-/* --- LEITURA PROFUNDA (ARTIGO + SIDEBAR) --- */
+/* --- LEITURA PROFUNDA --- */
 .deep-read {
     padding: 70px 0;
 }
@@ -463,6 +551,10 @@ body {
     color: #FFFFFF;
 }
 
+.high-contrast .footer-brand .logo {
+    color: #FFFF00;
+}
+
 .footer-brand p {
     margin-top: 16px;
     font-size: 0.9rem;
@@ -511,6 +603,10 @@ body {
 
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 992px) {
+    .acc-container {
+        justify-content: center;
+    }
+
     .hero-grid,
     .split-grid,
     .article-layout {

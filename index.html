@@ -11,10 +11,26 @@
 </head>
 <body>
 
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <div class="accessibility-bar" role="toolbar" aria-label="Controles de Acessibilidade">
+        <div class="container acc-container">
+            <span class="acc-label">Acessibilidade:</span>
+            <div class="acc-buttons">
+                <button id="btn-contrast" class="acc-btn" aria-pressed="false" aria-label="Alternar Alto Contraste">
+                    ☯ Alto Contraste
+                </button>
+                <button id="btn-font-increase" class="acc-btn" aria-label="Aumentar tamanho do texto">A+</button>
+                <button id="btn-font-decrease" class="acc-btn" aria-label="Diminuir tamanho do texto">A-</button>
+                <button id="btn-font-reset" class="acc-btn" aria-label="Restaurar tamanho padrão do texto">A</button>
+            </div>
+        </div>
+    </div>
+
     <header class="header">
         <div class="container nav-container">
             <a href="#" class="logo">espaço<span>calma</span></a>
-            <nav class="nav">
+            <nav class="nav" aria-label="Navegação Principal">
                 <a href="#destaque">Destaque</a>
                 <a href="#ciencia">Ciência & Pesquisa</a>
                 <a href="#analise">Análise</a>
@@ -23,145 +39,147 @@
         </div>
     </header>
 
-    <section class="hero" id="destaque">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <span class="badge">Edição Atual • Neurociência & Bem-Estar</span>
-                <h1>O impacto da sobrecarga silenciosa no cérebro contemporâneo</h1>
-                <p class="lead">Pesquisas recentes indicam que o excesso de micro-estímulos diários compromete a capacidade de autorregulação emocional antes mesmo do surgimento do estresse consciente.</p>
-                <div class="article-meta">
-                    <span class="author">Por Dra. Elena Vasconcelos</span>
-                    <span class="dot">•</span>
-                    <span class="read-time">Leitura de 6 min</span>
+    <main id="main-content">
+        <section class="hero" id="destaque" aria-labelledby="hero-title">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="badge">Edição Atual • Neurociência & Bem-Estar</span>
+                    <h1 id="hero-title">O impacto da sobrecarga silenciosa no cérebro contemporâneo</h1>
+                    <p class="lead">Pesquisas recentes indicam que o excesso de micro-estímulos diários compromete a capacidade de autorregulação emocional antes mesmo do surgimento do estresse consciente.</p>
+                    <div class="article-meta">
+                        <span class="author">Por Dra. Elena Vasconcelos</span>
+                        <span class="dot" aria-hidden="true">•</span>
+                        <span class="read-time">Leitura de 6 min</span>
+                    </div>
+                </div>
+                
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=1200&q=80" alt="Luz do sol filtrada através de folhagens verdes em ambiente calmo">
+                    <span class="caption">Ambientes com luz natural e vegetação auxiliam no restabelecimento do foco atencional.</span>
                 </div>
             </div>
-            
-            <div class="hero-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=1200&q=80" alt="Luz do sol filtrada através de folhagens verdes em ambiente calmo">
-                <span class="caption">Ambientes com luz natural e vegetação auxiliam no restabelecimento do foco atencional.</span>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="container"><hr class="divider"></div>
+        <div class="container"><hr class="divider"></div>
 
-    <section class="editorial-section" id="ciencia">
-        <div class="container split-grid">
-            <div class="split-image">
-                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1000&q=80" alt="Pessoa em momento de descompressão mental em ambiente sereno">
-            </div>
-            <div class="split-text">
-                <span class="category-tag">Descoberta Científica</span>
-                <h2>OMS e Harvard apontam 'Desconexão Intencional' como fator crítico de saúde</h2>
-                <p class="meta-date">Publicado em Agência de Saúde & Neurociência</p>
+        <section class="editorial-section" id="ciencia" aria-labelledby="ciencia-title">
+            <div class="container split-grid">
+                <div class="split-image">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1000&q=80" alt="Pessoa meditando em momento de descompressão mental em ambiente sereno">
+                </div>
+                <div class="split-text">
+                    <span class="category-tag">Descoberta Científica</span>
+                    <h2 id="ciencia-title">OMS e Harvard apontam 'Desconexão Intencional' como fator crítico de saúde</h2>
+                    <p class="meta-date">Publicado em Agência de Saúde & Neurociência</p>
 
-                <p>Estudos integrados conduzidos por pesquisadores de Harvard e compilados nos relatórios mais recentes sobre saúde mental revelam que o cérebro humano necessita de janelas diárias sem qualquer estímulo de telas para processar emoções represadas.</p>
-                
-                <p>O fenômeno conhecido como <em>"fadiga de decisão"</em> ocorre quando a atenção é dividida ininterruptamente entre notificações, metas e demandas sociais. A inserção de apenas 20 minutos diários de descompressão sem tecnologia demonstrou reduzir os níveis do hormônio cortisol em até 31% nos voluntários analisados.</p>
+                    <p>Estudos integrados conduzidos por pesquisadores de Harvard e compilados nos relatórios mais recentes sobre saúde mental revelam que o cérebro humano necessita de janelas diárias sem qualquer estímulo de telas para processar emoções represadas.</p>
+                    
+                    <p>O fenômeno conhecido como <em>"fadiga de decisão"</em> ocorre quando a atenção é dividida ininterruptamente entre notificações, metas e demandas sociais. A inserção de apenas 20 minutos diários de descompressão sem tecnologia demonstrou reduzir os níveis do hormônio cortisol em até 31% nos voluntários analisados.</p>
 
-                <div class="quote-callout">
-                    <p>“Não se trata apenas de descansar o corpo, mas de permitir que a rede neural em modo padrão (Default Mode Network) consolide aprendizados e processe sentimentos.”</p>
+                    <blockquote class="quote-callout">
+                        <p>“Não se trata apenas de descansar o corpo, mas de permitir que a rede neural em modo padrão (Default Mode Network) consolide aprendizados e processe sentimentos.”</p>
+                    </blockquote>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="container"><hr class="divider"></div>
+        <div class="container"><hr class="divider"></div>
 
-    <section class="editorial-section reverse" id="analise">
-        <div class="container split-grid">
-            <div class="split-text">
-                <span class="category-tag">Análise Comportamental</span>
-                <h2>Como a arquitetura dos ambientes molda o sistema nervoso</h2>
-                <p class="meta-date">Estudo sobre Psicologia Ambiental</p>
+        <section class="editorial-section reverse" id="analise" aria-labelledby="analise-title">
+            <div class="container split-grid">
+                <div class="split-text">
+                    <span class="category-tag">Análise Comportamental</span>
+                    <h2 id="analise-title">Como a arquitetura dos ambientes molda o sistema nervoso</h2>
+                    <p class="meta-date">Estudo sobre Psicologia Ambiental</p>
 
-                <p>A relação entre o ambiente físico e o equilíbrio emocional tem sido alvo de investigações aprofundadas. A exposição contínua a tons esverdeados, luz natural indireta e texturas orgânicas reduz significativamente a atividade da amígdala — a região cerebral responsável pela resposta de luta ou fuga.</p>
+                    <p>A relação entre o ambiente físico e o equilíbrio emocional tem sido alvo de investigações aprofundadas. A exposição contínua a tons esverdeados, luz natural indireta e texturas orgânicas reduz significativamente a atividade da amígdala — a região cerebral responsável pela resposta de luta ou fuga.</p>
+                    
+                    <p>De acordo com especialistas em higiene mental, reorganizar o espaço de trabalho e convivência para incluir elementos da natureza não é apenas uma escolha estética, mas uma estratégia de prevenção primária contra distúrbios de ansiedade generalizada e Burnout.</p>
+
+                    <ul class="editorial-list">
+                        <li><strong>Iluminação equilibrada:</strong> A luz natural nas primeiras horas do dia regula o ritmo circadiano.</li>
+                        <li><strong>Paleta biofílica:</strong> Cores desaturadas em tons de verde e terrosos diminuem a frequência cardíaca de repouso.</li>
+                        <li><strong>Redução de ruído visual:</strong> Ambientes minimalistas diminuem a carga cognitiva desnecessária.</li>
+                    </ul>
+                </div>
                 
-                <p>De acordo com especialistas em higiene mental, reorganizar o espaço de trabalho e convivência para incluir elementos da natureza não é apenas uma escolha estética, mas uma estratégia de prevenção primária contra distúrbios de ansiedade generalizada e Burnout.</p>
-
-                <ul class="editorial-list">
-                    <li><strong>Iluminação equilibrada:</strong> A luz natural nas primeiras horas do dia regula o ritmo circadiano.</li>
-                    <li><strong>Paleta biofílica:</strong> Cores desaturadas em tons de verde e terrosos diminuem a frequência cardíaca de repouso.</li>
-                    <li><strong>Redução de ruído visual:</strong> Ambientes minimalistas diminuem a carga cognitiva desnecessária.</li>
-                </ul>
+                <div class="split-image">
+                    <img src="https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=1000&q=80" alt="Espaço de leitura e escrita com caderno e xícara de chá próximo à janela">
+                </div>
             </div>
-            
-            <div class="split-image">
-                <img src="https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=1000&q=80" alt="Espaço de leitura e escrita com caderno e xícara de chá">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="panoramic-banner">
-        <div class="panoramic-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80" alt="Floresta ensolarada em tons suaves de verde">
-            <div class="panoramic-overlay">
-                <div class="container">
-                    <div class="banner-content">
-                        <h2>“A preservação da sanidade mental na era da hiperconexão exige a coragem de desacelerar.”</h2>
-                        <span class="quote-author">— Síntese do Painel Internacional de Saúde Emocional</span>
+        <section class="panoramic-banner">
+            <div class="panoramic-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=80" alt="Floresta ensolarada em tons suaves de verde">
+                <div class="panoramic-overlay">
+                    <div class="container">
+                        <div class="banner-content">
+                            <h2>“A preservação da sanidade mental na era da hiperconexão exige a coragem de desacelerar.”</h2>
+                            <span class="quote-author">— Síntese do Painel Internacional de Saúde Emocional</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="editorial-section" id="dados">
-        <div class="container">
-            <div class="section-title-center">
-                <span class="category-tag">Panorama Estatístico</span>
-                <h2>Evidências numéricas sobre o bem-estar contemporâneo</h2>
-                <p class="section-subtitle">Dados extraídos de pesquisas globais publicadas nos últimos dois anos.</p>
+        <section class="editorial-section" id="dados" aria-labelledby="dados-title">
+            <div class="container">
+                <div class="section-title-center">
+                    <span class="category-tag">Panorama Estatístico</span>
+                    <h2 id="dados-title">Evidências numéricas sobre o bem-estar contemporâneo</h2>
+                    <p class="section-subtitle">Dados extraídos de pesquisas globais publicadas nos últimos dois anos.</p>
+                </div>
+
+                <div class="data-row">
+                    <div class="data-item">
+                        <span class="data-number">68%</span>
+                        <h3>Redução de Ansiedade</h3>
+                        <p>Dos indivíduos que praticam a rotina de leitura física e caminhada diária relatam diminuição perceptível dos sintomas ansiosos.</p>
+                    </div>
+
+                    <div class="data-item">
+                        <span class="data-number">20min</span>
+                        <h3>Contato Diário com a Natureza</h3>
+                        <p>O tempo mínimo recomendado por neurocientistas para reduzir a produção de adrenalina e estabilizar a pressão arterial.</p>
+                    </div>
+
+                    <div class="data-item">
+                        <span class="data-number">3.5x</span>
+                        <h3>Qualidade do Sono</h3>
+                        <p>Melhoria registrada em grupos que eliminaram o uso de telas nos 60 minutos antecedentes ao momento de deitar.</p>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="data-row">
-                <div class="data-item">
-                    <span class="data-number">68%</span>
-                    <h4>Redução de Ansiedade</h4>
-                    <p>Dos indivíduos que praticam a rotina de leitura física e caminhada diária relatam diminuição perceptível dos sintomas ansiosos.</p>
-                </div>
+        <section class="deep-read" aria-labelledby="deep-read-title">
+            <div class="container article-layout">
+                <article class="article-body">
+                    <h2 id="deep-read-title">O papel da autocompaixão na regulação emocional</h2>
+                    <p class="intro-p">A tendência ocidental de avaliar o próprio desempenho de forma rígida tem sido associada ao aumento de quadros depressivos. A psicologia moderna propõe a autocompaixão como alternativa sustentável.</p>
+                    
+                    <p>Diferente da autoestimulação superficial, a autocompaixão fundamenta-se em aceitar as limitações humanas com a mesma empatia dedicada a um parceiro de confiança. Estudos clínicos demonstram que indivíduos que cultivam o diálogo interno acolhedor apresentam maior resiliência diante de frustrações profissionais e pessoais.</p>
 
-                <div class="data-item">
-                    <span class="data-number">20min</span>
-                    <h4>Contato Diário com a Natureza</h4>
-                    <p>O tempo mínimo recomendado por neurocientistas para reduzir a produção de adrenalina e estabilizar a pressão arterial.</p>
-                </div>
+                    <p>Ao reconhecer que o sofrimento e os erros fazem parte da experiência compartilhada, o indivíduo desarma o circuito do medo, permitindo uma tomada de decisão mais lúcida e equilibrada.</p>
+                </article>
 
-                <div class="data-item">
-                    <span class="data-number">3.5x</span>
-                    <h4>Qualidade do Sono</h4>
-                    <p>Melhoria registrada em grupos que eliminaram o uso de telas nos 60 minutos antecedentes ao momento de deitar.</p>
-                </div>
+                <aside class="article-sidebar" aria-label="Informações complementares">
+                    <div class="sidebar-image">
+                        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80" alt="Paisagem de natureza serena com nevoeiro suave sobre as árvores">
+                    </div>
+                    <div class="sidebar-box">
+                        <h3>Principais Pontos</h3>
+                        <ul>
+                            <li>Substituição da autocrítica pela observação neutra.</li>
+                            <li>Reconhecimento da humanidade comum nas falhas.</li>
+                            <li>Prática diária de acolhimento nos momentos de tensão.</li>
+                        </ul>
+                    </div>
+                </aside>
             </div>
-        </div>
-    </section>
-
-    <section class="deep-read">
-        <div class="container article-layout">
-            <main class="article-body">
-                <h2>O papel da autocompaixão na regulação emocional</h2>
-                <p class="intro-p">A tendência ocidental de avaliar o próprio desempenho de forma rígida tem sido associada ao aumento de quadros depressivos. A psicologia moderna propõe a autocompaixão como alternativa sustentável.</p>
-                
-                <p>Diferente da autoestimulação superficial, a autocompaixão fundamenta-se em aceitar as limitações humanas com a mesma empatia dedicada a um parceiro de confiança. Estudos clínicos demonstram que indivíduos que cultivam o diálogo interno acolhedor apresentam maior resiliência diante de frustrações profissionais e pessoais.</p>
-
-                <p>Ao reconhecer que o sofrimento e os erros fazem parte da experiência compartilhada, o indivíduo desarma o circuito do medo, permitindo uma tomada de decisão mais lúcida e equilibrada.</p>
-            </main>
-
-            <aside class="article-sidebar">
-                <div class="sidebar-image">
-                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80" alt="Natureza serena e nevoeiro suave">
-                </div>
-                <div class="sidebar-box">
-                    <h3>Principais Pontos</h3>
-                    <ul>
-                        <li>Substituição da autocrítica pela observação neutra.</li>
-                        <li>Reconhecimento da humanidade comum nas falhas.</li>
-                        <li>Prática diária de acolhimento nos momentos de tensão.</li>
-                    </ul>
-                </div>
-            </aside>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container footer-grid">
