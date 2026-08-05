@@ -1,17 +1,43 @@
-// Script simples para realçar navegação fluida
+// Navegação fluida e animação de leitura suave
 document.addEventListener('DOMContentLoaded', () => {
-    // Efeito suave de rolagem e destaque simples no header
-    const linksNav = document.querySelectorAll('.nav a');
+    const navLinks = document.querySelectorAll('.nav a, .footer-links a');
 
-    linksNav.forEach(link => {
+    navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href');
-            if (targetId.startsWith('#')) {
-                const targetElement = document.querySelector(targetId);
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
                 if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
                 }
             }
         });
+    });
+
+    // Animação sutil de revelação ao rolar
+    const observerOptions = {
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    const sections = document.querySelectorAll('.editorial-section, .panoramic-banner, .data-row, .deep-read');
+    sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
     });
 });
