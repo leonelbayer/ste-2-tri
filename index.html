@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espaço Calma — Saúde Emocional</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">espaço<span>calma</span></a>
+            <nav class="nav">
+                <a href="#sobre">Sobre</a>
+                <a href="#praticas">Práticas</a>
+                <a href="#diario">Acolhimento</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="sobre">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="badge">Acolhimento & Bem-estar</span>
+                <h1>Cultive o seu equilíbrio emocional no dia a dia.</h1>
+                <p>Um espaço minimalista dedicado à desaceleração, autoconhecimento e pausa consciente.</p>
+                <a href="#diario" class="btn">Fazer Check-in do Dia</a>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Ambiente sereno de meditação">
+            </div>
+        </div>
+    </section>
+
+    <section id="praticas" class="features">
+        <div class="container">
+            <h2 class="section-title">Pequenos hábitos para a mente</h2>
+            
+            <div class="cards-grid">
+                
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Pausa consciente">
+                    </div>
+                    <div class="card-body">
+                        <h3>Pausas Conscientes</h3>
+                        <p>Reserve 5 minutos do dia para praticar a respiração guiada e diminuir o fluxo de pensamentos.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1499209974431-9dac3ada00d7?auto=format&fit=crop&w=600&q=80" alt="Escrita terapêutica">
+                    </div>
+                    <div class="card-body">
+                        <h3>Escrita Terapêutica</h3>
+                        <p>Organize suas emoções registrando ideias e sentimentos sem julgamento ao final da rotina.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=600&q=80" alt="Conexão com a natureza">
+                    </div>
+                    <div class="card-body">
+                        <h3>Conexão com a Natureza</h3>
+                        <p>O contato visual ou físico com elementos naturais ajuda a estabilizar os níveis de ansiedade.</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="diario" class="interactive-section">
+        <div class="container card-interactive">
+            <h2>Como você se sente neste momento?</h2>
+            <p>Clique em uma das opções abaixo para receber uma reflexão pontual.</p>
+            
+            <div class="mood-buttons">
+                <button class="mood-btn" data-mood="calmo">🌿 Tranquilo</button>
+                <button class="mood-btn" data-mood="ansioso">🌧️ Ansioso</button>
+                <button class="mood-btn" data-mood="cansado">🌙 Cansado</button>
+                <button class="mood-btn" data-mood="grato">✨ Grato</button>
+            </div>
+
+            <div id="mood-response" class="mood-response hidden">
+                <p id="response-text"></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Espaço Calma — Um cantinho para desacelerar.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
