@@ -1,4 +1,3 @@
-// Navegação fluida e animação de leitura suave
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav a, .footer-links a');
 
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Animação sutil de revelação ao rolar
     const observerOptions = {
         threshold: 0.15
     };
